@@ -1,6 +1,8 @@
 require('dotenv').config();
 
-const port = '3000';
+const port = 'app.sock';
+const hostname = 'css-only-url-favicon.tk';
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -14,7 +16,6 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/favicon.routes")(app);
-
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${port}.`);
 });
