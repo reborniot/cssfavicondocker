@@ -16,6 +16,6 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/favicon.routes")(app);
-app.listen(process.env.PORT, () => {
+app.listen((port, hostname, () => {
   console.log(`Server is running on port ${port}.`);
 });
