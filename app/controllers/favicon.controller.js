@@ -1,5 +1,6 @@
-var request = require('request');
-var jsdom = require('jsdom');
+const request = require('request');
+const jsdom = require('jsdom');
+const https = require('https');
 const { JSDOM } = jsdom;
 
 exports.getFavIcon = (req, res) => {
@@ -49,24 +50,26 @@ exports.getFavIcon = (req, res) => {
 
   request(url + '/favicon.ico', function (err, resp, body) {
     if (resp.statusCode === 200) {
-      let fullpath = url + "/favicon.ico";
-      res.send("<img src='" + fullpath + "'>");
+      fullpath = url + "/favicon.ico";
     } else {
       request(url, function (err, resp, body) {
         if (resp.statusCode === 200) {
           let dom = new JSDOM(body);
           let favurl = dom.window.document.querySelector('[rel*=icon]')?.href;
-          let fullpath;
     
           if(!favurl) {
             fullpath = url + "/favicon.ico";
           } else {
             fullpath = favurl.split("/")[0] == "" ? url + favurl : favurl;
           }
-    
-          res.send("<img src='" + fullpath + "'>");
         }
       });
     }
+
+    res.writeHead(200,{'content-type':'image/x-icon'});
+    https.get(fullpath, (stream) => {
+      stream.pipe(res);
+    });
+
   });
 };

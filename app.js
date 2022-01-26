@@ -25,5 +25,5 @@ app.listen(PORT, () => {
 		host: HOST ? HOST : "127.0.0.1",
 		port: PORT,
 	};
-	console.log(`Server init on: http://:${PORT}`);
+	console.log(`Server init on: http://${HOST}:${PORT}`);
 });
