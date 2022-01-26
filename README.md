@@ -4,7 +4,7 @@
 
 You can view live from Codepen page: https://codepen.io/phyesix/pen/eYeOeLL
 
-## 🚀 Development
+## 👨‍💻 Development
 
 First of all, you can install with NPM or YARN
 
