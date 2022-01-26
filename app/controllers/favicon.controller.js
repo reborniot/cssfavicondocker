@@ -52,7 +52,7 @@ exports.getFavIcon = (req, res) => {
     if (resp.statusCode === 200) {
       fullpath = url + "/favicon.ico";
     } else {
-      request(url, function (err, resp, body) {
+      /* request(url, function (err, resp, body) {
         if (resp.statusCode === 200) {
           let dom = new JSDOM(body);
           let favurl = dom.window.document.querySelector('[rel*=icon]')?.href;
@@ -63,7 +63,8 @@ exports.getFavIcon = (req, res) => {
             fullpath = favurl.split("/")[0] == "" ? url + favurl : favurl;
           }
         }
-      });
+      }); */
+      fullpath = url + "/favicon.png";
     }
 
     res.writeHead(200,{'content-type':'image/x-icon'});
