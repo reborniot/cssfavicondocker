@@ -1,7 +1,10 @@
 require('dotenv').config();
 
-const port = 'app.sock';
-const hostname = 'cssfavicon.tk';
+const {
+	NODE_ENV,
+	PORT,
+	HOST,
+} = process.env;
 
 const express = require("express");
 const cors = require("cors");
@@ -16,6 +19,11 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/favicon.routes")(app);
-app.listen((port, hostname, () => {
-  console.log(`Server is running on port ${port}.`);
+           
+app.listen(PORT, () => {
+	app.currentServer = {
+		host: HOST ? HOST : "127.0.0.1",
+		port: PORT,
+	};
+	console.log(`Server init on: http://:${PORT}`);
 });
