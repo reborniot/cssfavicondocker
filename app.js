@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const port = 'app.sock';
-const hostname = 'css-only-url-favicon.tk';
+const hostname = 'cssfavicon.tk';
 
 const express = require("express");
 const cors = require("cors");
