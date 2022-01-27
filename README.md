@@ -29,7 +29,7 @@ GET /favicon/:siteurl
 
 ## 🗄️ ENV File
 
-You can change node port.
+You can change port and hostname.
 
 ## 👦 Author
 
