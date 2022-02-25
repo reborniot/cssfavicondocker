@@ -1,7 +1,7 @@
 const request = require('request');
-const jsdom = require('jsdom');
+// const jsdom = require('jsdom');
 const https = require('https');
-const { JSDOM } = jsdom;
+//const { JSDOM } = jsdom;
 
 exports.getFavIcon = (req, res) => {
   const url = req.params.url;
@@ -13,40 +13,6 @@ exports.getFavIcon = (req, res) => {
     });
     return;
   }
-
-  // function icoParser() {
-  //   request(url, function (err, resp, body) {
-  //     if (resp.statusCode === 200) {
-  //       let dom = new JSDOM(body);
-  //       let favurl = dom.window.document.querySelector('[rel*=icon]')?.href;
-
-  //       if(!favurl) {
-  //         fullpath = url + "/favicon.ico";
-  //       } else {
-  //         fullpath = favurl.split("/")[0] == "" ? url + favurl : favurl;
-  //       }
-  //       // Promise.resolve(fullpath);
-  //       return fullpath;
-  //     }
-  //   });
-  // }
-
-  // function icoChecker() {
-  //   request(url + '/favicon.ico', function (err, resp, body) {
-  //     if (resp.statusCode === 200) {
-  //       let fullpath = url + "/favicon.ico";
-  //       // Promise.resolve(fullpath);
-  //       return fullpath;
-  //     } else {
-  //       icoParser();
-  //     }
-  //   });
-  // }
-
-  // let iconFullPath = icoChecker();
-  // res.send("<img src='" + iconFullPath + "'>");
-
-  // Promise.resolve(icoChecker()).then((fullpath) => {res.send("<img src='" + fullpath + "'>")});
 
   request(url + '/favicon.ico', function (err, resp, body) {
     if (resp.statusCode === 200) {
