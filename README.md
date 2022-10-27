@@ -2,6 +2,7 @@
 
 ## ✨ Demo
 
+Blog post: https://ibrahimnergiz.com/blog/using-favicon-in-external-links/
 You can view live from Codepen page: https://codepen.io/phyesix/pen/eYeOeLL
 
 ## 👨‍💻 Development
