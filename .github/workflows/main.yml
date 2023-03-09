@@ -124,5 +124,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: phyesix/${{ steps.metaX.outputs.tags }}
-          labels: phyesix/${{ steps.metaX.outputs.labels }}
+          tags: phyesix/cssfavicon
+          labels: phyesix/cssfavicon
