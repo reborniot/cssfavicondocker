@@ -62,20 +62,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          build-args:
-            casino=production
           platforms: linux/amd64
           push: true
-          tags: ${{ steps.meta.outputs.tags }}-production
-          labels: ${{ steps.meta.outputs.labels }}-production
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          build-args:
-            casino=development
-          platforms: linux/amd64
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}-development
-          labels: ${{ steps.meta.outputs.labels }}-development
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
