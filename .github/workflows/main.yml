@@ -91,7 +91,7 @@ jobs:
         run: npm install
       -
         name: Docker meta
-        id: meta
+        id: metaX
         uses: docker/metadata-action@v4
         with:
           # list of Docker images to use as base name for tags
@@ -124,5 +124,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: dh-${{ steps.meta.outputs.tags }}
-          labels: dh-${{ steps.meta.outputs.labels }}
+          tags: phyesix/${{ steps.metaX.outputs.tags }}
+          labels: phyesix/${{ steps.metaX.outputs.labels }}
