@@ -23,7 +23,7 @@ require("./app/routes/favicon.routes")(app);
 app.listen(PORT, () => {
 	app.currentServer = {
 		host: HOST ? HOST : "127.0.0.1",
-		port: PORT,
+		port: PORT ? PORT : 4000,
 	};
 	console.log(`Server init on: http://${HOST}:${PORT}`);
 });
