@@ -124,3 +124,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
+          tags: phyesix/cssfavicon
+          labels: phyesix/cssfavicon
